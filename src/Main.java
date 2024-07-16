@@ -1,17 +1,22 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        double[] numbers = {12.4, 23.1, -11.6, -16.8, 45.5, -53.6, 1.9, 5.7, -90.4, -78.3, 21.2, 66.6, 77.7, -88.8, 44.4};
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        int kolvo = 0;
+        double sum = 0;
+        boolean minus = false;
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        for (double num : numbers) {
+
+            if (!minus) {
+                if (num < 0) {
+                    minus = true;
+                }
+            } else if (num > 0) {
+                sum = sum + num;
+                kolvo++;
+            }
         }
+        System.out.println(sum / kolvo);
     }
 }
